@@ -7,9 +7,9 @@ public class Employees {
     private String lastName;
     private String direction;
     private String position;
-    private int age;
+    private Integer age;
 
-    public Employees(Integer id, String name, String lastName, String direction, String position, int age) {
+    public Employees(Integer id, String name, String lastName, String direction, String position, Integer age) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -58,7 +58,7 @@ public class Employees {
         this.position = position;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
