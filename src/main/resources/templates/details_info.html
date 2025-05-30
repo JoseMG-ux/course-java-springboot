@@ -4,11 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${title}">Pagina Spring Boot</title>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
-    <h1 th:text="${title}"></h1>
-    <h2 th:text="${description}"></h2>
-    <h2 th:text="${author}"></h2>
-    <h2 th:text="${version}"></h2>
+    <h2>Detalles de Colaborador</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Posición</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td th:text="${employee.id}"></td>
+
+            <td th:text="${employee.name != null ? employee.name : 'No tiene nombre'}"></td>
+
+            <td th:text="${employee.lastName != null ? employee.lastName : 'No tiene apellido'}"></td>
+
+            <td th:text="${employee.direction != null ? employee.direction : 'No tiene dirección'}"></td>
+
+            <td th:text="${employee.position != null ? employee.position : 'No tiene posición'}"></td>
+
+            <td th:text="${employee.age != null ? employee.age : 'No tiene edad'}"></td>
+        </tr>
+    </table>
+
+    <h2>Lista de Colaboradores</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Posición</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${Employees}">     
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.direction}"></td>
+                <td th:text="${employee.position}"></td>
+                <td th:text="${employee.age}"></td>
+            </tr>
+            
+        </tbody>
+    </table>
 </body>
 </html>
