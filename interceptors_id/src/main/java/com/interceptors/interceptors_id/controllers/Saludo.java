@@ -14,7 +14,7 @@ public class Saludo {
         //Que son los hilos (Thread): Son unidades de ejecución dentro de un proceso. Permiten que múltiples tareas se ejecuten simultáneamente.
         // Que es un Thread.sleep(): Es un método que pausa la ejecución del hilo actual durante un período de tiempo especificado.
 
-        Thread.sleep(1000); // Simula delay de 1 segundo
+        Thread.sleep(5000); // Simula delay de 5 segundo
         return "Hola, bienvenido a la API de Interceptors!";
     }
     
